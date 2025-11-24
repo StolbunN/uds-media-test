@@ -1,0 +1,22 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $white-color;
+  background: $red-color;
+  border-radius: 4px;
+  padding: 16px 50px;
+  transition: background .3s;
+  border: none;
+  outline: none;
+  @include hover-capable {
+    &:hover {
+      background: #FF5D54;
+    }
+  }
+}

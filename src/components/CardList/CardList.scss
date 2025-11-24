@@ -1,0 +1,11 @@
+@use "../../styles/mixins.scss" as *;
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 50px 10px;
+  @include respond("tablet") {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

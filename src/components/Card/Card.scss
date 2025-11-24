@@ -1,0 +1,170 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform .3s, box-shadow .3s;
+  @include hover-capable {
+    &:hover {
+    @include card-shadow;
+    }
+    &:hover &__image{
+      transform: scale(1.1);
+    }
+    &:hover &__description{
+      max-height: 100%;
+      bottom: 0;
+    }
+  }
+  @include respond("tablet") {
+    flex-direction: row;
+    gap: 20px;
+  }
+  @include respond("mobile") {
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__top{
+    position: relative;
+    width: 100%;
+    height: 348px;
+    border-radius: 4px;
+    overflow: hidden;
+    @include respond("tablet") {
+      height: 277px;
+      flex: 1 1 50%
+    }
+    @include respond("mobile") {
+      flex: 1 1 249px;
+    }
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform .3s;
+  }
+  &__building-badge,
+  &__actions,
+  &__description {
+    position: absolute;
+    z-index: 10;
+  }
+  &__building-badge{
+    top: 15px;
+    left: 15px;
+    @include respond("tablet") {
+      width: 39px;
+      height: 39px;
+    }
+  }
+  &__actions {
+    top: 15px;
+    right: 15px;
+  }
+  &__description {
+    bottom: -30px;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    color: $white-color;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    max-height: 0;
+    padding: 15px;
+    transition: max-height .3s, bottom .3s;
+  }
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+    color: $black-color;
+    cursor: pointer;
+    transition: color .2s;
+    &.isFavorites {
+      color:$primary-color;
+    }
+    @include hover-capable {
+      &:hover{
+        color: $primary-color;
+      }
+    }
+    @include respond("tablet") {
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+  &__favorites-icon{
+    cursor: pointer;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 22px;
+    color: $white-color;
+    stroke: $black-color;
+    transition: all .2s;
+    &.isFavorites {
+      color:$primary-color;
+      stroke: $primary-color;
+    }
+    @include hover-capable {
+      &:hover {
+        color:$primary-color;
+        stroke: $primary-color;
+      }
+    }
+  }
+  &__button {
+    @include respond("tablet") {
+      display: none;
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @include respond("tablet") {
+      flex: 1 1 50%
+    }
+    @include respond("mobile") {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px 30px;
+  @include respond("tablet") {
+    gap: 15px;
+    grid-template-columns: 1fr;
+  }
+  &__item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    & span {
+      font-weight: 500;
+      font-size: 16px;
+      color: $gray-color;
+      @include respond("tablet") {
+        font-size: 14px;
+      }
+    }
+    &:nth-child(2) {
+      order: 1;
+    }
+  }
+}

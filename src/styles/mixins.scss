@@ -1,0 +1,22 @@
+@mixin respond($breakpoint) {
+    @if ($breakpoint == "mobile"){
+        @media (max-width: 767px){
+            @content;
+        }
+    }
+    @if ($breakpoint == "tablet"){
+        @media (max-width: 1199px){
+            @content;
+        }
+    }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+@mixin hover-capable {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

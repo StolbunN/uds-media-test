@@ -1,0 +1,29 @@
+@use "../../styles/variables.scss" as *;
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  &__value {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 14px;
+    color: $black-color;
+  }
+  &__star-half-wrapper {
+    position: relative;
+    width: 15px;
+    height: 14px;
+  }
+  &__star-half-icon,
+  &__star-empty-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
