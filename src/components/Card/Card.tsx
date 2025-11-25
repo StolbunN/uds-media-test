@@ -6,8 +6,9 @@ import { CardActions } from "../CardActions/CardActions";
 import { Rating } from "../Rating/Rating";
 import { Button } from "../Button/Button";
 import { useState } from "react";
+import { Tooltip } from "../Tooltip/Tooltip";
 
-export function Card({ name, description, image, address, distance, underground, rating, button, className }: CardProps) {
+export function Card({ name, description, image, address, distance, underground, rating, button, setIsOpenModal, className }: CardProps) {
 
   const [isFavorites, setIsFavorites] = useState<boolean>(false);
 
@@ -16,7 +17,7 @@ export function Card({ name, description, image, address, distance, underground,
       <div className="card__top">
         <Icon id="building" width="58" height="58" viewBox="0 0 58 58" className="card__building-badge" />
         <img src={image} alt={name} className="card__image" />
-        <CardActions className="card__actions" />
+        <CardActions className="card__actions" setIsOpenModal={setIsOpenModal}/>
         <div className="card__description">
           {description}
         </div>
@@ -26,9 +27,11 @@ export function Card({ name, description, image, address, distance, underground,
           <h3 className={cn("card__name", {
             "isFavorites": isFavorites
           })}>{name}</h3>
-          <Icon id="favorites" width="26" height="24" viewBox="0 0 26 24" className={cn("card__favorites-icon", {
-            "isFavorites": isFavorites
-          })} onClick={() => setIsFavorites(!isFavorites)} />
+          <Tooltip text={!isFavorites ? "Добавить в избранное" : "Убрать из избарнного"} className="card__tooltip">
+            <Icon id="favorites" width="26" height="24" viewBox="0 0 26 24" className={cn("card__favorites-icon", {
+              "isFavorites": isFavorites
+            })} onClick={() => setIsFavorites(!isFavorites)} />
+          </Tooltip>
         </header>
         {button && <Button className="card__button">Перейти</Button>}
         <ul className="card__info info">

@@ -1,4 +1,5 @@
 @use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
 
 .actions {
   padding: 13px 25px;
@@ -12,9 +13,37 @@
     gap: 20px;
   }
   &__item {
+    display: flex;
+  }
+  &__item-icon {
     @include respond("tablet") {
       width: 22px;
       height: 22px;
+    }
+  }
+  &__tooltip-gallery .tooltip__content,
+  &__tooltip-view .tooltip__content {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%);
+    &::after {
+      left: 50%;
+      transform: translate(-50%);
+      top: -6px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid $black-color;
+    }
+  }
+  &__tooltip-video .tooltip__content {
+    top: calc(100% + 10px);
+    right: -30px;
+    &::after {
+      right: 35px;
+      top: -6px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid $black-color;
     }
   }
 }

@@ -1,0 +1,31 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.tooltip {
+  position: relative;
+  &__content {
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    width: 150px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background: $black-color;
+    color: $white-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+  }
+  &__content::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  @include hover-capable {
+    &:hover &__content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
