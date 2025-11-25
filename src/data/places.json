@@ -16,7 +16,7 @@
     "address": "ул. Юности, д. 2, стр. 1, ВАО",
     "distance": "3 км от вас",
     "underground": "Арбатская, 3 мин",
-    "rating": 4.56,
+    "rating": 3.56,
     "button": true
   },
   {
@@ -26,7 +26,7 @@
     "address": "ул. Юности, д. 2, стр. 1, ВАО",
     "distance": "3 км от вас",
     "underground": "Арбатская, 3 мин",
-    "rating": 4.56,
+    "rating": 3,
     "button": false
   },
   {
@@ -36,7 +36,7 @@
     "address": "ул. Юности, д. 2, стр. 1, ВАО",
     "distance": "3 км от вас",
     "underground": "Арбатская, 3 мин",
-    "rating": 4.56,
+    "rating": 4.01,
     "button": false
   },
   {
@@ -46,7 +46,7 @@
     "address": "ул. Юности, д. 2, стр. 1, ВАО",
     "distance": "3 км от вас",
     "underground": "Арбатская, 3 мин",
-    "rating": 4.56,
+    "rating": 2.99,
     "button": false
   },
   {
@@ -56,7 +56,7 @@
     "address": "ул. Юности, д. 2, стр. 1, ВАО",
     "distance": "3 км от вас",
     "underground": "Арбатская, 3 мин",
-    "rating": 4.56,
+    "rating": 0,
     "button": false
   }
 ]

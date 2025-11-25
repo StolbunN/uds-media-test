@@ -15,10 +15,14 @@
     font-size: 14px;
     color: $black-color;
   }
-  &__star-half-wrapper {
-    position: relative;
+  &__star-filled-wrap,
+  &__star-half-wrap,
+  &__star-empty-wrap {
     width: 15px;
     height: 14px;
+  }
+  &__star-half-wrap {
+    position: relative;
   }
   &__star-half-icon,
   &__star-empty-icon {
